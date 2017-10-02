@@ -1,0 +1,36 @@
+<form id="prestamo" ng-controller="prestController" ng-submit="asignarPrestamo()">
+	<center><h2>Pedir Prestamo:</h2></center>
+    <hr>
+    <div class="col-md-6 form-inline">
+    	<div class="form-group">
+    		<label>Ingrese el monto:</label><br>
+            <input required type="number" class="form-control" placeholder="Ingrese monto" ng-model="nuevaDeuda.prestamo" pattern="[0-9]*">
+    	</div><br><hr>
+    	<div class="form-group">
+            <label>Busque su nombre:</label>
+            <button type="button" class="btn btn-info dropdown-header" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color: black;">
+                {{nombre_cliente}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" >
+                <li ng-repeat="client in cliente" ng-click="agregarNombre($index+1)"><a href="#">{{client.nombre_completo}}</a></li>        
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6 form-inline">
+        <div class="form-group">
+            <label>Seleccione la cantidad de cuotas:</label>
+            <button type="button" class="btn btn-primary dropdown-header" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color: black;">
+                {{nro_cuota}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" > 
+                <li ng-repeat="cuota in cantidadCuotas" ng-click="agregarCuota($index+1)"><a href="#"  >{{cuota.n_cuotas}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <div class="col-md-4 col-md-offset-4">
+            <center><input type="submit" class="btn btn-default btn-sm" value="Pedir Prestamo"></center>
+        </div>
+    </section>
+</form>
+

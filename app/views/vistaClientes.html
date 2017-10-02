@@ -1,0 +1,35 @@
+<div class="table-responsive" ng-controller="agregarController">
+    <center>
+        <h3>Para pedir un prestamo debes estar registrado</h3><br>
+        <button class="btn btn-default btn-sm" ng-click="formularioAgregar('agregarClientes')">Registrarse</button>
+    </center>
+    <hr>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="client in cliente track by $index" style="color: black;">
+                <td><strong>{{client.nombre_completo}}</strong></td>
+                <td><strong>{{client.email}}</strong></td>
+                <td><strong>{{client.telefono}}</strong></td>
+                <td>
+                    <!--<button type="button" class="btn btn-info btn-sm" ng-click="updateCliente('lista_clientes', $index)">Editar</button>-->
+                    <button type="button" class="btn btn-info btn-sm" ng-click="formularioEditar('agregarClientes',$index)">Editar</button>
+                </td>
+                <td>
+                    <!--<button type="button" class="btn btn-danger btn-sm" ng-click="eliminarCliente($index)">Eliminar</button>-->
+                    <!--<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModalDelete">Eliminar</button>-->
+                    <button type="button" class="btn btn-danger btn-sm" ng-click="eliminarCliente($index)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

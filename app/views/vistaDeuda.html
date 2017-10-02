@@ -1,0 +1,22 @@
+<div class="table-responsive" ng-controller="deudaController">
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Prestamo</th>
+                <th>Deuda Total</th>
+                <th>Deuda Actual</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="deuda in deudas track by $index">
+                <td><strong>{{deuda.cliente.nombre_completo}}</strong></td>
+                <td><strong>${{deuda.prestamo}}</strong></td>
+                <td><strong>${{deuda.total}}</strong></td>
+                <td><strong>${{(deudaActual(deuda))}}</strong></td>
+                <td class="text-center"><a class='btn btn-default btn-sm' href="#" ng-click="formPagos('vistaPagos',$index)" >Estado</a> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

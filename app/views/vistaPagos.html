@@ -1,0 +1,44 @@
+<center>
+    <h3>Paga tus cuotas aquí</h3>
+    <hr>
+</center>
+<div class="table-responsive" ng-controller="deudaController" >
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Cliente:</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>                              
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td></td>
+                <td><strong>{{nuevaCuota.cliente.nombre_completo}}</strong></td>
+                <td><strong>{{nuevaCuota.cliente.email}}</strong></td>
+                <td><strong>{{nuevaCuota.cliente.telefono}}</strong></td>
+            </tr>
+        </tbody>      
+    </table>
+    <br>
+    <br>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Estado</th>
+                <th>Valor</th>
+                <th><center>Cancelar</center></th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cuota in nuevaCuota.cuotas track by $index">
+                <td><strong>{{(estadoCuota(cuota.pagado))}}</strong></td>
+                <td><strong>${{cuota.valor}}</strong></td>
+                <td class="text-center"><a class='btn btn-default btn-sm' href="#" ng-click="pagarCuota($index)" ng-if="!cuota.pagado">Pagar</a></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <button class="btn btn-default btn-sm"  ng-click="cambiarVista('vistaDeuda')">Volver</button>
+</div>

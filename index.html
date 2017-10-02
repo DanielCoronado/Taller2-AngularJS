@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <title>Taller 2 AngularJS v2.0</title>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilos.css">
+
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-local-storage.min.js"></script>
+    <script src="lib/js/jquery-3.2.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/principalController.js"></script>
+    <script src="app/controllers/addController.js"></script>
+    <script src="app/controllers/prestamoController.js"></script>
+    <script src="app/controllers/deudaController.js"></script>
+</head>
+
+<body ng-controller="firstController">
+    <div class="row">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	                    <span class="sr-only">Toggle navigation</span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	            </div>
+
+	            <div class="collapse navbar-collapse navbar-ex1-collapse">
+	                <ul class="nav navbar-nav js-nav-add-active-class">
+	                    <li ng-click="cambiarVista('vistaClientes')"><a href="#">Clientes</a></li>
+	                    <li ng-click="cambiarVista('vistaPrestamo')"><a href="#">Prestamo</a></li>
+	                    <li ng-click="cambiarVista('vistaDeuda')"><a href="#">Deuda</a></li>
+	                    
+	                </ul>
+	                <div id="capital" class="pull-right">
+	                	<!--capital actualizado en el navbar-->
+	                	<h4>Capital Actual: ${{capital_actual}}</h4>
+	                </div>
+	            </div><!-- /.navbar-collapse -->
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+    	<div class="container">
+    		<center>
+    			<h1>Sistema de Prestamos y Pagos On-Line</h1>
+    		</center>
+    	</div>
+    </div>
+    <div class="row">
+        <div class="container">
+        	<hr>
+            <div ng-include="menu"></div>
+        </div>
+    </div>
+</body>
+
+</html>

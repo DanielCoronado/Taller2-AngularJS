@@ -1,0 +1,31 @@
+<section id="contact" ng-controller="agregarController">
+    <div class="section-content">
+        <center><h1 class="section-header">Ingresa tus datos</h1></center>
+    </div>
+    <hr>
+    <form id="form-ingreso" ng-submit="agregarCliente(nuevoCliente)">
+        <div class="col-md-6 form-line">
+            <div class="form-group">
+                <label>Nombre Completo:</label>
+                <input required type="text" class="form-control" placeholder=" Ingrese Nombre"  ng-model="nuevoCliente.nombre_completo" ng-value="nombreCliente" pattern="[a-zA-Z]*">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input required type="email" class="form-control" placeholder=" Ingrese Email" ng-model="nuevoCliente.email" ng-value="emailCliente" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+            </div>  
+            
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Telefono:</label>
+                <input required type="number" class="form-control" placeholder=" Ingrese Telefono" ng-model="nuevoCliente.telefono" ng-value="telefonoCliente" pattern="[0-9]*">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-default btn-sm submit">Guardar</button>
+                <button class="btn btn-default btn-sm submit pull-right" ng-click="cambiarVista('vistaClientes')">Volver</button>
+            </div>
+        </div>
+    </form>
+    
+    <hr>
+</section>
